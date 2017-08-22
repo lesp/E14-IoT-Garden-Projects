@@ -38,7 +38,6 @@ while True:
         server.starttls()
         server.login(fromaddr, "PASSWORD")
         text = msg.as_string()
-        text = msg.as_string()
         server.sendmail(fromaddr, toaddr, text)
         server.quit()
         time.sleep(10)
