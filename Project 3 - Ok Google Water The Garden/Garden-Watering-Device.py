@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+from gpiozero import DigitalOutputDevice
 import time
 import paho.mqtt.client as mqtt
 
