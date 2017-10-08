@@ -24,7 +24,6 @@ import paho.mqtt.client as mqtt
 
 def on_connect(client, userdata, flags, rc):  
         print("Connected with result code "+str(rc))
-        client.subscribe("test")
 
  
 def main():
@@ -57,13 +56,12 @@ def main():
                 print('Watering Garden')
                 client = mqtt.Client()
                 client.on_connect = on_connect 
-                client.connect("192.168.0.7", 1883, 60)
+                client.connect("BROKER IP ADDRESS", 1883, 60)
                 client.publish("garden","water garden")
-                for i in range(10):
-                    led.set_state(aiy.voicehat.LED.ON)
-                    time.sleep(0.1)
-                    led.set_state(aiy.voicehat.LED.OFF)
-                    time.sleep(0.5)
+                led.set_state(aiy.voicehat.LED.ON)
+                time.sleep(1)
+                led.set_state(aiy.voicehat.LED.OFF)
+                time.sleep(1)
             elif 'goodbye' in text:
                 break
 
